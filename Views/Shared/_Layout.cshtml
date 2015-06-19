@@ -1,0 +1,119 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CAR SALES</title>
+     <link rel="stylesheet" type="text/css" href="~/Content/bootsrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/iecss.css" />
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/boxOver.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:lightgray;" >
+    <div id="main_container" >
+     
+
+        <div id="main_content">
+
+            <div id="menu_tab">
+
+                <div class="left_menu_corner"></div>
+                <ul class="menu" style="background-color: black">
+                    <li class="divider"> </li>
+                    <li>@Html.ActionLink("Home", "index", "Home", null, new { @class = "nav1" })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Sign Up", "Signup", "Account", null, new { @class = "nav4" })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Login", "SignIn", "Account", null, new { @class = "nav4" })</li>
+                    <li class="divider"></li>
+                    <div class="languages">
+                        <div class="lang_text"><a href="/Admin/AdminLogin" style="color:lightgray">Admin</a></div>
+                    <li class="divider"></li>
+
+                    </div>
+                  
+                   
+
+                    <form method="post" action="/Home/SearchProduct">
+                        <div class="search_text"><a href="#"> Search</a></div>
+                        <input type="text" class="search_input" name="search" />
+                      
+                    </form>
+                </ul>
+
+
+                <div class="right_menu_corner"></div>
+            </div>
+
+          
+         
+            <div id="header">
+                <div class="ofterw_content">
+                    <div class="oferta_img"> <img src="~/Images/images/anigif.gif" alt="" /></div>
+                </div>
+             
+           
+                <div class="left_content">
+                  
+                    <form id="Cat" name="Cat" action="~/Home/CategoryDetail" method="post">
+                       
+                     
+                     
+                        <ul class="left_menu" id="Cat">
+                            @*<hr />*@
+                            <li class="even"><input style=" font-family:'Arial Rounded MT';color:black;width:195px; border:ridge ;background-image: url(~/Image/menu_title_bg.gif) " name="Submit" type="Submit" value="BMW" /></li>
+                            @*<hr />*@
+                            <li class="odd"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; background-image: url(~/Image/menu_title_bg.gif);" class="even" name="Submit" type="Submit" value="FARARI" /></li>
+                            @*<hr />*@
+                            <li class="even"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; border:ridge; background-image: url(~/Image/menu_title_bg.gif);" class="odd" name="Submit" type="Submit" value="ROSERIDE" /></li>
+                            @*<hr />*@
+                            <li class="odd"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; background-image: url(~/Image/menu_title_bg.gif);" class="even" name="Submit" type="Submit" value="LANDCRUSER" /></li>
+                            @*<hr />*@
+                            <li class="even"><input style="font-family:'Arial Rounded MT';color:black;width: 195px; border:ridge; background-image: url(~/Image/menu_title_bg.gif);" class="odd" name="Submit" type="Submit" value="TOYOTACOROLA" /></li>
+                            @*<hr />*@
+                        </ul>
+                    </form>
+
+                </div>
+              
+                @RenderBody()
+
+
+               
+                </div>
+              
+                <div class="footer" style="background-color:black ; opacity:0.5">
+                    <div class="left_footer">
+                        <ul class="follow_icon">
+                            @*<li>*@<a href="https://www.gmail.com/" style="opacity: 1;"><img src="~/Images/images/follow_icon.png" alt="" /></a>@*</li>*@
+                            @*<li>*@<a href="https://www.twitter.com/" style="opacity: 1;"><img src="~/Images/images/follow_icon1.png" alt="" /></a>@*</li>*@
+                            @*<li>*@<a href="https://www.facebook.com/" style="opacity: 1;"><img src="~/Images/images/follow_icon2.png" alt="" /></a>@*</li>*@
+
+                        </ul> 
+                    </div>
+                    <div class="center_footer">
+                       Contact us:<br>
+                        Phone#: 12345678
+                        <br />
+
+                 
+
+                    </div>
+                    <div class=" right_footer">
+
+                        <p>
+                            Getting your dream car was never this easy. Personalized to perfectly suit your needs,.<br />
+                            Terms &amp; WE are offering affordable, tailor-made financing options along with special <br />features to help you enjoy your most preferred car in no time
+                        </p>
+                    </div>
+                </div>
+            </div>
+           
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
+        </div></body>
+</html>

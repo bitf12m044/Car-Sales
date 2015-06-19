@@ -1,0 +1,51 @@
+﻿@model MvcApplication4.Models.Customer
+<div class="center_content">
+  
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="contact_form">
+                @using(Html.BeginForm("RegisterCustomer","Account",FormMethod.Post))
+                { 
+                       
+    <input style=" left:auto" id="check" type="button" value="Validity" />
+    <strong><p style="color:white" id="avail"></p></strong>
+    <script>
+        $(document).ready(function () {
+            $('#check').click(function () {
+                var n = $('#username').val();
+                $.getJSON('/Account/checkUser?name=' + n, function (data) {
+                    $('#avail').text(data);
+                });
+            });
+        });
+    </script>
+
+                       @Html.TextBoxFor(model => model.Name, new { @class = "contact_input", Id = "username", required = "required" , placeholder = "Name" })
+                      
+                    <div class="form_row">
+                       
+                     
+                        @Html.TextBoxFor(model => model.Email, new { @class = "contact_input", type = "email", required = "required", placeholder = "Email" })
+                    </div>
+                    <div class="form_row">
+                     
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "contact_input", type="number", required = "required" , placeholder = "Phone" })
+                    </div>
+                    <div class="form_row">
+                     
+                        @Html.TextBoxFor(model => model.Adderss, new { @class = "contact_input", type = "text", required = "required", placeholder = "Address" })
+                    </div>
+                        <div class="form_row">
+                          
+                            @Html.PasswordFor(model => model.Password, new { @class = "contact_input", required = "required", placeholder = "Password" })
+                        </div>
+                    <div class="form_row"> <button type="submit" value="Sign Up">Sign Up</button> </div>
+                }
+                <label><strong>@TempData["message"]</strong></label>
+            </div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>
+

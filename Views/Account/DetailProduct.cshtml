@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+ 
+}
+@model MvcApplication4.Models.Product
+
+<div class="center_content123" style="width: 1100px; float: left; padding: 5px 10px; height:1500px">
+ 
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="product_img_big">
+                <img src="@Url.Content("~/Images/img_"+Model.Path+"_0.jpg")" @*height="300" width="300"*@ alt="" border="0" /></a>
+                <div class="thumbs"> <a href="#" title="header=[Thumb1] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_1.jpg")" alt="" border="0" /></a> <a href="#" title="header=[Thumb2] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_2.jpg")" alt="" border="0" /></a> <a href="#" title="header=[Thumb3] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_3.jpg")" alt="" border="0" /></a> </div>
+                <div class="details_big_box">
+
+                    <div class="product_title_big">@Model.Name</div>
+                    <div class="specifications">
+
+                        Price: <span class="blue">@Model.Price</span><br />
+                    </div>
+
+                    <a href="~/Account/AddToCart/@Model.Id" class="addtocart">BUY CAR</a>
+
+
+                </div>
+            </div>
+           
+            
+        </div>
+      
+</div>
+    </div>
+
+@section Cart{
+    <div class="shopping_cart">
+       
+        <div class="cart_details" id="number">
+            <p id="ti">NO of Cars: @TempData["Items"]</p><br />
+       <p id="tp">Total Price: @TempData["Total"] </p> <span class="price" id="sum"></span>
+        </div>
+      
+    </div>
+}
+
+
+
+

@@ -1,0 +1,198 @@
+﻿@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<img src="~/Images/logoadmin.png" width="1360" height="400">  
+<div class="center_content" style="display:table-cell; padding-left:200px">
+
+    <div></div>
+
+    <div class="center_div center_div center_content">
+
+        <div class="form_row center_div">
+            <form action="/Products/SaveProduct" method="post" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td><label class="contact"><strong>Image:</strong></label></td>
+                        <td><input type="file" multiple class="contact_input" name="Image" required/></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label class="contact"><strong>Name:</strong></label></td>
+                        <td><input type="text" class="contact_input" name="Name" required /></td>
+                    </tr>
+
+
+                   
+                    
+                   
+
+                    <tr>
+                        <td><label class="contact"><strong>Price:</strong></label></td>
+                        <td><input type="text" class="contact_input" name="Price" required /></td>
+                    </tr>
+                    <tr>
+                        <td><label class="contact"><strong>Category:</strong></label></td>
+
+                        <td>
+                            <select id="Clist" name="Cat">
+                                <option value="Processors" selected id="Processors">Processors</option>
+                                <option id="Motherboard" value="Motherboard">Motherboard</option>
+                                <option id="Desktop" value="Desktop">Desktop</option>
+                                <option id="Laptop" value="Laptop">Laptop</option>
+                                <option id="others" value="Others">Others</option>
+                            </select>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td><button style=" margin:auto" type="submit" value="Add" onclick="Submit">Add</button></td>
+                    </tr>
+                </table>
+            </form>
+        
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#Clist option').remove();
+        $.getJSON('/Products/returnCategories', function (data) {
+            $('#Clist').append("<option>-Select Category-</option>");
+            $.each(data, function (i, item) {
+                $('#Clist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+            });
+        });
+
+
+        $('#Blist option').remove();
+        $.getJSON('/Products/returnBrands', function (data) {
+            $('#Blist').append("<option>-Select Brand-</option>");
+            $.each(data, function (i, item) {
+                $('#Blist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+            });
+        });
+    });
+</script>
+
+
+@*@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<div class="center_content" style="display:table-cell; padding-left:200px">
+    <div><h3>Add Product</h3></div>
+
+    <div class="center_div center_div center_content">
+
+        <div class="form_row center_div">
+            <form action="/Products/SaveProduct" method="post" enctype="multipart/form-data">
+                <table>
+
+                    <tr>
+                        <td><label class="contact"><strong>Image:</strong></label></td>
+                        <td><input type="file" multiple class="contact_input" name="Image" required /></td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td><label class="contact"><strong>Name:</strong></label></td>
+                        <td><input type="text" class="contact_input" name="Name" required /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="contact"><strong>Category:</strong></label></td>
+                        <td>
+                            <select id="Clist" name="Cat">
+
+                                <option value="Processors" selected id="Processors">Processors</option>
+                                <option id="Motherboard" value="Motherboard">Motherboard</option>
+                                <option id="Desktop" value="Desktop">Desktop</option>
+                                <option id="Laptop" value="Laptop">Laptop</option>
+                                <option id="others" value="Others">Others</option>
+                            </select>
+
+                        
+
+
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="contact"><strong>Brand:</strong></label></td>
+                        <td>
+                            <select id="Blist" name="Bran">
+                                <option value="Sony" id="Sony" selected>Sony</option>
+                                <option value="Samsung" id="Samsung">Samsung</option>
+                                <option value="Daewoo" id="Daewoo">Daewoo</option>
+                                <option value="LG" id="LG">LG</option>
+                                <option value="Fajistu" id="Fajistu">Fajistu</option>
+                                <option value="Motorlla" id="Motorlla">Motorola</option>
+                                <option value="Phillips" id="Phillips">Phillips</option>
+                                <option value="Beko" id="Beko">Beko</option>
+                                <option value="Others" id="Others">Others</option>
+                            </select>
+                        </td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td><label class="contact"><strong>Description</strong></label></td>
+                        <td><input type="text" class="contact_input" name="Description" required /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="contact"><strong>Price:</strong></label></td>
+                        <td><input type="text" class="contact_input" name="Price" required /></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><button style=" margin:auto" type="submit" value="Add" onclick="Submit">Add</button></td>
+                    </tr>
+                </table>
+            </form>
+            <label><strong>@TempData["message"]</strong></label>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#Clist option').remove();
+        $.getJSON('/Products/returnCategories', function (data) {
+            $('#Clist').append("<option>-Select Category-</option>");
+            $.each(data, function (i, item) {
+                $('#Clist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+            });
+        });
+
+
+        $('#Blist option').remove();
+        $.getJSON('/Products/returnBrands', function (data) {
+            $('#Blist').append("<option>-Select Brand-</option>");
+            $.each(data, function (i, item) {
+                $('#Blist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+            });
+        });
+    });
+</script>*@
+
+
+
+
+
+
+
+
+
+
+

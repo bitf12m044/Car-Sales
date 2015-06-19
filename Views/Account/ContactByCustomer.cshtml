@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="center_content">
+    <div class="center_title_bar">Contact Us</div>
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="contact_form">
+                <div class="form_row">
+                    <label class="contact"><strong>Name:</strong></label>
+                    <input type="text" class="contact_input" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Email:</strong></label>
+                    <input type="text" class="contact_input" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Phone:</strong></label>
+                    <input type="text" class="contact_input" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Company:</strong></label>
+                    <input type="text" class="contact_input" />
+                </div>
+                <div class="form_row">
+                    <label class="contact"><strong>Message:</strong></label>
+                    <textarea class="contact_textarea"></textarea>
+                </div>
+                <div class="form_row"> <a href="#" class="contact">send</a> </div>
+            </div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>
+
+@section Cart{
+    <div class="shopping_cart">
+        <div class="cart_title">Shopping Cart</div>
+        <div class="cart_details" id="number">
+            <p id="ti">@TempData["Items"]</p><br />
+            <span class="border_cart"></span><p id="tp">Total: @TempData["Total"] </p> <span class="price" id="sum"></span>
+        </div>
+        <div class="cart_icon"><a href="~/Account/Checkout" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="~/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+    </div>
+}
+
+
+<!-- end of center content -->

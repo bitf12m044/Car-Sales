@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+@model List<MvcApplication4.Models.Product>
+@*<div class="center_content">*@
+    <div class="center_content123" style="width: 1100px; float: left; padding: 5px 10px; height:1500px">
+
+        <div class="center_title_bar"></div>
+
+        @foreach (var x in Model)
+        {
+            <div class="prod_box">
+                <div class="top_prod_box"></div>
+                <div class="center_prod_box">
+                    <div class="product_title"><a href="~/Account/DetailProduct/@x.Id">@x.Name</a></div>
+                    <div class="product_img"><a href="~/Account/DetailProduct/@x.Id"><img src="@Url.Content("~/Images/img_"+x.Path+"_0.jpg")" width="200" height="200" alt="" border="0" /></a></div>
+                    <div class="prod_price"> <span class="price">@x.Price</span></div>
+                    <div class="prod_details_tab"> <a id="atc" href="~/Account/AddToCart/@x.Id" title="header=[Add to cart] body=[&nbsp;] fade=[on]">@*<img src="~/Images/cart.gif" alt="" border="0" class="left_bt" />*@</a> <a href="#" title="header=[Specials] body=[&nbsp;] fade=[on]">@*<img src="~/Images/favs.gif" alt="" border="0" class="left_bt" /></a>*@ <a href="#" title="header=[Gifts] body=[&nbsp;] fade=[on]">@*<img src="~/Images/favorites.gif" alt="" border="0" class="left_bt" />*@</a> <a href="~/Account/DetailProduct/@x.Id">View details</a> </div>
+                </div>
+                <div class="bottom_prod_box"></div>
+
+            </div>
+        }
+    </div>

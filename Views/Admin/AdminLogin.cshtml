@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/views/Shared/_LAdminLogin.cshtml"; 
+}
+@model MvcApplication4.Models.Admin
+<div class="center_div">
+    
+    <div class="center_div center_text center_title_bar" style="margin-left:10%"><h3>Admin LogIn</h3></div>
+            
+    <div class="center_div center_text" >            
+               
+         <div class="form_row center_div">
+             <form action="/Admin/Login" method="post">
+                 <table style="margin:auto">
+
+                     <tr>
+                         <td><label class="contact"><strong>Login:</strong></label></td>
+                         <td>@Html.TextBoxFor(model => model.UserName, new { @class = "contact_input", placeholder = "Name" })</td>
+                       
+                     </tr>
+                     <tr>
+                         <td><label class="contact"><strong>Password</strong></label></td>
+                        <td>@Html.TextBoxFor(model => model.Password, new { @class = "contact_input", placeholder = "Password" })</td>
+                         
+                     </tr>
+                     <tr>
+                         <td><input style=" margin-left:110%" type="submit" value="LogIn"></td>
+                     </tr>
+                 </table>
+                 <label><strong>@TempData["message"]</strong></label>
+             </form>
+             <br /><br /><br />
+                    </div>
+
+            </div>
+</div>
+

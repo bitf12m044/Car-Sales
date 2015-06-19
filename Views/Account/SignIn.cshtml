@@ -1,0 +1,36 @@
+﻿@model MvcApplication4.Models.Customer
+<div class="center_content">
+
+   
+    <label class="center_title_bar"><strong>@TempData["UserRegistered"]</strong></label>
+    <div class="prod_box_big" >
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="contact_form">
+                <div class="form_row"  >
+                    @using(Html.BeginForm("AuthenticateCustomer","Account",FormMethod.Post))
+                    { 
+                        <table >
+                            <tr>
+                                <td ><strong>@Html.LabelFor(model => model.Name, new { @class = "contact_input" })</strong></td>
+                                <td style="border:solid">@Html.TextBoxFor(model => model.Name, new { @class = "contact_input",required="required" })</td>
+                            </tr>
+                          
+                            <tr>
+                                
+                                <td><strong>@Html.LabelFor(model => model.Password, new { @class = "contact_input" })</strong></td>
+                                <td style="border:solid">@Html.PasswordFor(model => model.Password, new { @class="contact_input",required="required"})</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp </td>
+                               <td ><br /><input style=" margin:auto;border:thick; border-bottom-color:black; color:lightgray; background-color:black;" type="submit" value="Sign In" ></td>
+                            </tr>
+                        </table>
+                    }
+                    <label><strong>@TempData["message"]</strong></label>
+</div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>
+    </div>

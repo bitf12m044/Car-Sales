@@ -1,0 +1,49 @@
+﻿@model MvcApplication4.Models.Product
+@{
+    ViewBag.Title = "Update";
+}
+@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<img src="~/Images/logoadmin.png" width="1000" height="400">  
+<div class ="center_content"style="padding-left:50px">
+<h2>Update Product</h2>
+<form method="post" action="/Products/UpdateConfirm/@Model.Id">
+    <table style="nav-left:auto">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" value="@Model.Name" name="Name" required /></td>
+        </tr>
+     
+        <tr>
+            <td>
+                Price
+            </td>
+            <td> <input type="number" value="@Model.Price" name="Price" required /></td>
+</tr>
+        <tr>
+            <td><input type="submit" value="Update" /></td>
+</tr>
+    </table>
+</form>
+    <script>
+        $(document).ready(function () {
+            $('#Clist option').remove();
+            $.getJSON('/Products/returnCategories', function (data) {
+                $('#Clist').append("<option>-Select Category-</option>");
+                $.each(data, function (i, item) {
+                    $('#Clist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+                });
+            });
+
+
+            $('#Blist option').remove();
+            $.getJSON('/Products/returnBrands', function (data) {
+                $('#Blist').append("<option>-Select Brand-</option>");
+                $.each(data, function (i, item) {
+                    $('#Blist').append("<option id= " + item.Name + " value= " + item.Name + ">" + item.Name + "</option>");
+                });
+            });
+        });
+    </script>
+</div>

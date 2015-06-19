@@ -1,0 +1,10 @@
+﻿body {
+}  
+.center_div {
+    margin:auto;
+    align-content:center;
+}
+.center_text{
+    text-align:center;
+    margin:auto;
+}

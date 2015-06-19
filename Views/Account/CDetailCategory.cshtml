@@ -1,0 +1,30 @@
+﻿@model List<MvcApplication4.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="center_content">
+    <div class="center_title_bar">Latest Products</div>
+    @foreach (var x in Model)
+    {
+        <div class="prod_box">
+            <div class="top_prod_box"></div>
+            <div class="center_prod_box">
+                <div class="product_title"><a href="~/Account/DetailProduct/@x.Id">@x.Name</a></div>
+                <div class="product_img"><a href="~/Account/DetailProduct/@x.Id"><img src="@Url.Content("~/Images/uploads/"+x.Path)" width="70" height="70" alt="" border="0" /></a></div>
+                <div class="prod_price"><span class="reduce">@(x.Price+30)$</span> <span class="price">@x.Price$ </span></div>
+            </div>
+            <div class="bottom_prod_box"></div>
+            <div class="prod_details_tab"> <a href="~/Account/AddToCart/@x.Id" title="header=[Add to cart] body=[&nbsp;] fade=[on]"><img src="~/Images/cart.gif" alt="" border="0" class="left_bt" /></a> <a href="#" title="header=[Specials] body=[&nbsp;] fade=[on]"><img src="~/Images/favs.gif" alt="" border="0" class="left_bt" /></a> <a href="#" title="header=[Gifts] body=[&nbsp;] fade=[on]"><img src="~/Images/favorites.gif" alt="" border="0" class="left_bt" /></a> <a href="~/Account/DetailProduct/@x.Id">details</a> </div>
+        </div>
+    }
+</div>
+@section Cart{
+    <div class="shopping_cart">
+        <div class="cart_title">Shopping Cart</div>
+        <div class="cart_details" id="number">
+            <p id="ti">@TempData["Items"]</p><br />
+            <span class="border_cart"></span><p id="tp">Total: @TempData["Total"] </p> <span class="price" id="sum"></span>
+        </div>
+        <div class="cart_icon"><a href="~/Account/Checkout" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="~/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+    </div>
+}

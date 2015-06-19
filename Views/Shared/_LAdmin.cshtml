@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Car Sales</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootsrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/boxOver.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:lightgray">
+    <div id="main_container">
+    
+             
+            
+        <div id="main_content">
+            <div id="menu_tab">
+                <div class="left_menu_corner"></div>
+                <ul class="menu" style="background-color: black; ">
+                    <li><a href="/Admin/AdminHome" class="nav1">Home</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/Products/AddProducts" class="nav2">New Cars</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/Products/ViewProducts" class="nav3">Update</a></li>
+                    <li class="divider"></li>
+                  
+                    <li><a href="/Home/index" class="nav4">Sign out</a></li>
+                    <li class="divider"></li>
+                </ul>
+   <div class="right_menu_corner"></div>
+            </div>
+        
+            @RenderBody()
+                </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br /><br /><br /><br />
+            <br />
+   
+    
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

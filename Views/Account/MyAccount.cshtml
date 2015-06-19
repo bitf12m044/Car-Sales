@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+@model List<MvcApplication4.Models.Product>
+<div class="center_content">
+    <div class="center_title_bar">Your Shopping Uptil now</div>
+        <div class="prod_box">
+            <div class="top_prod_box"></div>
+            <div class="center_prod_box">
+                <table border="1" style="border-color:darkgoldenrod; border-radius:9px; border-style:double">
+                    <tr>
+                        <td>Picture</td>
+                        <td>Name</td>
+                        <td>Category</td>
+                        <td>Brand</td>
+                        <td>Description</td>
+                        <td>Price $</td>
+                    </tr>
+@{
+    if (@Model != null) 
+    { 
+                    foreach (var x in Model)
+                    {
+                        <tr>
+                            <td><img src="@Url.Content("~/Images/uploads/"+x.Path)" width="70" height="70" alt="" /></td>
+                            <td>@x.Name</td>
+                            <td>@x.Category1</td>
+                            <td>@x.Brand1</td>
+                            <td>@x.Description</td>
+                            <td>@x.Price</td>
+                            <td><a href="/Account/delete/@x.Id">Drop Product</a></td>
+                        </tr>
+                    }
+                    
+    }
+    }
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>@ViewBag.Total</td>
+                        </tr>
+                </table>
+                <br/>
+
+                <form method="post" action="~/Account/Checkout">
+                <button name="Submit" type="submit" style="width:200px">Check out</button>
+                    </form>
+            </div>
+        </div>
+</div>
+@section Cart{
+    <div class="shopping_cart">
+        <div class="cart_title">Shopping Cart</div>
+        <div class="cart_details" id="number">
+            <p id="ti">@TempData["Items"]</p><br />
+            <span class="border_cart"></span><p id="tp">Total: @TempData["Total"] </p> <span class="price" id="sum"></span>
+        </div>
+        <div class="cart_icon"><a href="~/Account/Checkout" title="header=[Checkout] body=[&nbsp;] fade=[on]"><img src="~/images/shoppingcart.png" alt="" width="48" height="48" border="0" /></a></div>
+    </div>
+}
+
+
+
+

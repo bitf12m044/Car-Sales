@@ -1,0 +1,38 @@
+﻿@model List<MvcApplication4.Models.Product>
+@{
+    Layout = "~/views/Shared/_LAdmin.cshtml";
+}
+<img src="~/Images/logoadmin.png" width="1360" height="400">  
+<div class="center_content" style="padding-left:500px">
+<table border="1">
+    <tr>
+        <td>Picture</td>
+        <td>Name</td>
+        <td>catagory </td>
+        <td>Price </td>
+        <td>Update</td>
+        <td>Delete</td>
+        </tr>
+    @foreach(var x in Model)
+    { 
+    
+        <tr>
+        
+            <td><img src="@Url.Content("~/Images/img_"+x.Path+"_0.jpg")" width="200" height="200" alt="" /></td>
+            <td>@x.Name</td>
+            <td>@x.Category1</td>
+            <td>@x.Price</td>
+
+
+            <td>
+                <a href="/Products/Update/@x.Id">Update</a>
+              
+            </td>
+            <td>
+              
+                <a href="/Products/Delete/@x.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </table>
+    </div>

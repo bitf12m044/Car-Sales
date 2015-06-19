@@ -1,0 +1,97 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+}
+@model MvcApplication4.Models.Product
+
+
+<div class="center_content">
+
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="product_img_big">
+                <a><img src="@Url.Content("~/Images/img_"+Model.Path+"_0.jpg")" alt="" border="0" height="200" width="200" /></a>
+                <div class="thumbs"> <a href="#" title="header=[Thumb1] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_0.jpg")" alt="" border="0" height="200" width="200" /></a> <a href="#" title="header=[Thumb2] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_0.jpg")" alt="" border="0" height="200" width="200" /></a> <a href="#" title="header=[Thumb3] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_3.jpg")" alt="" border="0" height="200" width="200" /></a> </div>
+            </div>
+            <div class="details_big_box">
+                <div class="product_title_big">@Model.Name</div>
+                <div class="specifications">
+                    Category: <span class="blue">@Model.Category1</span><br />
+
+                    Price: <span class="blue">@Model.Price</span><br />
+                </div>
+
+                <a href="#" class="addtocart" style="border:solid;background-color:black;color:lightgray">Buy Car</a>
+            </div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+  
+    <h1> CARS HAVE SPECIFICATIONS</h1>
+    <p> An additional two-seat coupe style—labeled CRX—was introduced, noted for its compact dimensions and light weight. The third generation Civic saw the introduction of the long running four-cylinder D series engine including a new 1.5 L (91.5 cu in) CVCC engine. 1984 also saw the release of a high-performance Si model for the Japanese market, featuring upgraded suspension and the 1.6 L (97.6 cu in) DOHC ZC engine which was rated at 130 PS (118 HP). Si models were offered in the US as a 3-door Civic Si hatchback and the CRX Si variant with a 91 horsepower (68 kW) fuel-injected SOHC 12-valve engine. A 4WD engine with different transmission mounts was introduced for the first time in 1984, and later upgraded in 1987. It delivered a fuel economy of around 28 mpg highway. The 4WD system was push-button operated until improved in 1987 when the rear wheels would engage automatically once the front wheels lost traction.</p>
+    <p>The BMW i8 can go from 0–100 km/h (0 to 60 mph) in 4.4 seconds and has a top speed of 250 km/h (160 mph). The BMW i8 has a fuel efficiency of 2.1 L/100 km (134.5 mpg-imp; 112.0 mpg-US) under the NEDC test with carbon emissions of 49 g/km. EPA rated the i8 combined fuel economy at 76 equivalent (MPG-equivalent) (3.1 L gasoline equivalent/100 km; 91 mpg-imp gasoline equivalent).The BMW i8's second power source is a hybrid synchronous electric motor specially developed and produced by the BMW Group for BMW i. The electric motor develops maximum power of 131 hp (96 kW) and produces its maximum torque of around 236 lb-ft (320 Nm) from standstill. Typical of an electric motor, responsive power is instantly available when starting and this continues into the higher load ranges. As well as providing a power boost to assist the gasoline engine during acceleration, the electric motor can also power the vehicle by itself. Top speed in electric mode is approximately 75 mph (121 km/h)</p>
+
+
+    </div>
+   
+    </div>*@
+@*<div class="prod_box">
+    <div class="top_prod_box"></div>
+    <div class="center_prod_box">*@
+        @*<div class="product_img_big">*@
+            @*<a><img src="@Url.Content("~/Images/img_"+Model.Path+"_0.jpg")" alt="" border="0" height="200" width="200" /></a>
+            <img src="@Url.Content("~/Images/img_"+Model.Path+"_1.jpg")" alt="" border="0" height="200" width="200" /></a> <a href="#" title="header=[Thumb2] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_2.jpg")" alt="" border="0" height="200" width="200" /></a><img src="@Url.Content("~/Images/img_"+Model.Path+"_3.jpg")" alt="" border="0" height="200" width="200" /></a> </div>*@
+        @*</div>*@
+
+    @*<div class="details_big_box">
+        <div class="product_title_big">@Model.Name</div>
+        <div class="specifications">
+            Category: <span class="blue">@Model.Category1</span><br />
+
+            Price: <span class="blue">@Model.Price</span><br />
+        </div>
+
+        <a href="#" class="addtocart" style="border:solid;background-color:black;color:lightgray">Buy Car</a>
+    </div>
+    </div>
+    <div class="bottom_prod_box"></div>
+
+</div>*@
+
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+
+}
+@model MvcApplication4.Models.Product
+
+<div class="center_content123" style="width: 1100px; float: left; padding: 5px 10px; height:1500px">
+
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="product_img_big">
+                <img src="@Url.Content("~/Images/img_"+Model.Path+"_0.jpg")" @*height="300" width="300"*@ alt="" border="0" /></a>
+                <div class="thumbs"> <a href="#" title="header=[Thumb1] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_1.jpg")" alt="" border="0" /></a> <a href="#" title="header=[Thumb2] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_2.jpg")" alt="" border="0" /></a> <a href="#" title="header=[Thumb3] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/Images/img_"+Model.Path+"_3.jpg")" alt="" border="0" /></a> </div>
+                <div class="details_big_box">
+
+                    <div class="product_title_big">@Model.Name</div>
+                    <div class="specifications">
+
+                        Price: <span class="blue">@Model.Price</span><br />
+                    </div>
+
+                    <a href="~/Account/AddToCart/@Model.Id" class="addtocart">BUY CAR</a>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
